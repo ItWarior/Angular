@@ -6,12 +6,11 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  str = 'hello world'
-  number = 544121.4211545;
-  per = 0.36
-  data = new Date();
-  obj = {
-    name: 'Olga',
-    surname:'Bobco'
-  }
+  title = 'angular';
+
+  books = [
+    {name: 'Harry Poter', price: 210},
+    {name: 'Bobco', price: 250},
+    {name: 'Harry Shprot', price: 300}
+  ];
 }
