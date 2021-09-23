@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  color = 'green';
+  str = 'hello world'
+  number = 544121.4211545;
+  per = 0.36
+  data = new Date();
+  obj = {
+    name: 'Olga',
+    surname:'Bobco'
+  }
 }
