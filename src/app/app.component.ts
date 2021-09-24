@@ -8,9 +8,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'angular';
 
-  books = [
-    {name: 'Harry Poter', price: 210},
-    {name: 'Bobco', price: 250},
-    {name: 'Harry Shprot', price: 300}
-  ];
+  show(event : any){
+    console.log(event)
+  }
 }
