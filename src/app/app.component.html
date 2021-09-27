@@ -1,2 +1,9 @@
-<app-books></app-books>
-
+<div [ngClass] = {coments_block:true}>
+  <div *ngFor="let coment of comments" [ngClass] = {coment_block:true}>
+    <p>User Id: {{coment.userId}}</p>
+    <p>Post Id :{{coment.id}}</p>
+    <p>Title :{{coment.title}}</p>
+    <p>Body :{{coment.body}}</p>
+    <hr>
+  </div>
+</div>

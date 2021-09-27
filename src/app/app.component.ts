@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {CommentsService} from "./services/comments.service";
+import {CommentModel} from "./CommentModel";
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+  comments: CommentModel[] = [];
 
-  show(event : any){
-    console.log(event)
+  constructor(private commentService: CommentsService) {
+    this.commentService.getComments().subscribe((res)=>{
+        this.comments = res
+    })
   }
+
 }
