@@ -12,7 +12,6 @@ export class FormComponent implements OnInit {
 
   formObject : any = {
     userId: 5,
-    id: 1,
     title: '',
     body:''
   }
