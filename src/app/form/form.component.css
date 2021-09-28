@@ -1,0 +1,25 @@
+#coment_form{
+  display: flex;
+  justify-content: center;
+}
+#coment_content{
+  background-color: bisque;
+  width: 80%;
+  margin: 50px;
+}
+#group{
+  display: flex;
+  flex-direction: column;
+}
+#title_input{
+  margin-bottom: 20px;
+}
+#body_coment{
+  margin-bottom: 20px;
+}
+#send_button{
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  border-radius: 10px;
+}

@@ -1,3 +1,23 @@
-<form>
-  <input type="text">
+<form id="coment_form" [formGroup]="MessageControlGrop" #formElement = "ngForm">
+  <fieldset id="coment_content" >
+    <div id="group">
+      <input
+        id="title_input"
+        type="text"
+        [(ngModel)]="formObject.title"
+        formControlName="title"
+        placeholder="title..."
+        >
+      <textarea
+        id="body_coment"
+        [(ngModel)]="formObject.body"
+        cols="30"
+        rows="10"
+        formControlName="body"
+        placeholder="message..."
+        #text
+        ></textarea>
+    </div>
+    <input id="send_button" type="submit" name="btn" (click)="buttonClicked(formElement, text)">
+  </fieldset>
 </form>
