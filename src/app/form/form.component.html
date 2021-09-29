@@ -2,6 +2,9 @@
   <fieldset id="coment_content" >
     <div id="group">
       <input
+        required
+        minlength="5"
+        maxlength="50"
         id="title_input"
         type="text"
         [(ngModel)]="formObject.title"
@@ -9,6 +12,9 @@
         placeholder="title..."
         >
       <textarea
+        required
+        minlength="10"
+        maxlength="500"
         id="body_coment"
         [(ngModel)]="formObject.body"
         cols="30"
@@ -18,6 +24,10 @@
         #text
         ></textarea>
     </div>
-    <input id="send_button" type="submit" name="btn" (click)="buttonClicked(formElement, text)">
+    <input
+      id="send_button"
+      type="submit" name="btn"
+      [disabled] = "formElement.invalid"
+      (click)="buttonClicked(formElement, text)">
   </fieldset>
 </form>

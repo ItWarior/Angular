@@ -8,12 +8,13 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class FormComponent implements OnInit {
 
-  constructor() {}
+  constructor() {
+  }
 
-  formObject : any = {
+  formObject: any = {
     userId: 5,
     title: '',
-    body:''
+    body: ''
   }
 
   @Output() onButtonClicked = new EventEmitter();
@@ -22,29 +23,24 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.MessageControlGrop = new FormGroup({
-    title: new FormControl(),
-    body: new FormControl()
-  });
+    this.MessageControlGrop = new FormGroup({
+      title: new FormControl(),
+      body: new FormControl()
+    });
 
-  this.MessageControlGrop.valueChanges.subscribe((value: any) => {
-    this.formObject.title = value.title;
-    this.formObject.body = value.body;
-  });
+    this.MessageControlGrop.valueChanges.subscribe((value: any) => {
+      this.formObject.title = value.title;
+      this.formObject.body = value.body;
+    });
   }
 
-  buttonClicked(form: any, text: any){
-    const formValue = form.value;
+  buttonClicked(form: any, text: any) {
 
-    if (formValue.title.length > 5 && formValue.body.length > 10){
-      const comentsFormStorage : string[] = JSON.parse(<string>localStorage.getItem('coments'))||[];
-      const addNewComentToArr = JSON.stringify(comentsFormStorage.concat(this.formObject));
-      localStorage.setItem('coments', addNewComentToArr);
+    const comentsFormStorage: string[] = JSON.parse(<string>localStorage.getItem('coments')) || [];
+    const addNewComentToArr = JSON.stringify(comentsFormStorage.concat(this.formObject));
+    localStorage.setItem('coments', addNewComentToArr);
 
-      this.formObject.title = '';
-      text.value = '';
-    }
-
+    this.formObject.title = '';
+    text.value = '';
   }
-
 }
