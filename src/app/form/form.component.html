@@ -10,6 +10,7 @@
         [(ngModel)]="formObject.title"
         formControlName="title"
         placeholder="title..."
+        [ngStyle]="{border: formElement.valid ? '2px solid green': '2px solid red'}"
         >
       <textarea
         required
@@ -21,6 +22,7 @@
         rows="10"
         formControlName="body"
         placeholder="message..."
+        [ngStyle]="{border: formElement.valid ? '2px solid green': '2px solid red'}"
         #text
         ></textarea>
     </div>
