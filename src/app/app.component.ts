@@ -13,8 +13,15 @@ export class AppComponent {
 
   constructor(private commentService: CommentsService) {
     this.commentService.getComments().subscribe((res)=>{
-        this.comments = res
+      this.comments = [...JSON.parse(<string>localStorage.getItem('coments')) || [], ...res];
     })
   }
 
+  showAllComents(event: any){
+    event = JSON.parse(<string>event);
+
+    this.commentService.getComments().subscribe((res)=>{
+      this.comments = [ ...event, ...res];
+    })
+  }
 }
