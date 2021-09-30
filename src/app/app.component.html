@@ -1,9 +1,12 @@
+<div>
+  <input type="text" placeholder="Search" [(ngModel)]="searchTerm" />
+</div>
 <app-form
 (onButtonClicked)="showAllComents($event)"
 [allComents] = "comments"
 ></app-form>
 <div [ngClass] = {coments_block:true}>
-  <div *ngFor="let coment of comments" [ngClass] = {coment_block:true}>
+  <div *ngFor="let coment of comments | comentFilter:searchTerm" [ngClass] = {coment_block:true}>
     <p>User Id: {{coment.userId}}</p>
     <p>Post Id :{{coment.id}}</p>
     <p>Title :{{coment.title}}</p>
