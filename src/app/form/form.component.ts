@@ -13,8 +13,8 @@ export class FormComponent implements OnInit {
 
   formObject: any = {
     userId: 5,
-    title: '',
-    body: ''
+    title: null,
+    body: null
   }
 
   @Output() onButtonClicked = new EventEmitter();
@@ -27,10 +27,11 @@ export class FormComponent implements OnInit {
       title: new FormControl(),
       body: new FormControl()
     });
-
+    console.log(this.MessageControlGrop)
     this.MessageControlGrop.valueChanges.subscribe((value: any) => {
       this.formObject.title = value.title;
       this.formObject.body = value.body;
+      console.log(this.MessageControlGrop)
     });
   }
 
