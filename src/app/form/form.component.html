@@ -1,5 +1,6 @@
 <form id="coment_form" [formGroup]="MessageControlGrop" #formElement = "ngForm">
-  <fieldset id="coment_content" >
+  <fieldset id="coment_content"
+            [ngStyle]="{border: formElement.invalid && formElement.touched ? '2px solid red': '2px solid green'}" >
     <div id="group">
       <input
         required
@@ -10,6 +11,7 @@
         [(ngModel)]="formObject.title"
         formControlName="title"
         placeholder="title..."
+        [ngStyle]="{border: formElement.invalid && formElement.touched ? '2px solid red': '2px solid green'}"
         >
       <textarea
         required

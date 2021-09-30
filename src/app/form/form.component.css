@@ -13,9 +13,11 @@
 }
 #title_input{
   margin-bottom: 20px;
+  outline: none;
 }
 #body_coment{
   margin-bottom: 20px;
+  outline: none;
 }
 #send_button{
   width: 100px;
