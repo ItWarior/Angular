@@ -8,7 +8,7 @@ import {AppComponent} from './app.component';
 import { FormComponent } from './form/form.component';
 
 import {CommentsService} from "./services/comments.service";
-import { SearchComponent } from './search/search.component';
+
 
 import {ComentFilterPipe} from './coment-filter.pipe'
 
@@ -16,7 +16,6 @@ import {ComentFilterPipe} from './coment-filter.pipe'
   declarations: [
     AppComponent,
     FormComponent,
-    SearchComponent,
     ComentFilterPipe
   ],
   imports: [
