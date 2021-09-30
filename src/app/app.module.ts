@@ -8,11 +8,13 @@ import {AppComponent} from './app.component';
 import { FormComponent } from './form/form.component';
 
 import {CommentsService} from "./services/comments.service";
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
