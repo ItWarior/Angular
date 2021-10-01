@@ -9,10 +9,14 @@ import { FormComponent } from './form/form.component';
 
 import {CommentsService} from "./services/comments.service";
 
+
+import {ComentFilterPipe} from './coment-filter.pipe'
+
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    ComentFilterPipe
   ],
   imports: [
     BrowserModule,

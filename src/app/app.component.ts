@@ -10,7 +10,7 @@ import {CommentModel} from "./CommentModel";
 export class AppComponent {
   title = 'angular';
   comments: CommentModel[] = [];
-
+  searchTerm: string;
   constructor(private commentService: CommentsService) {
     this.commentService.getComments().subscribe((res)=>{
       this.comments = [...JSON.parse(<string>localStorage.getItem('coments')) || [], ...res];
