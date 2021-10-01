@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
     });
   }
 
-  buttonClicked(form: any, text: any) {
+  buttonClicked(form: any, titleRef: any, bodyRef: any) {
     const comentsFormStorage = JSON.parse(<string>localStorage.getItem('coments')) || [];
 
     const stream$ = new Observable((observe) => {
@@ -54,7 +54,9 @@ export class FormComponent implements OnInit {
       }
     )
 
-    this.formObject.title = '';
-    text.value = '';
+    titleRef.value = '';
+    titleRef.classList.contains = 'valid_form';
+    bodyRef.value = '';
+    bodyRef.classList.contains = 'valid_form';
   }
 }

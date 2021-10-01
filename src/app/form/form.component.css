@@ -25,3 +25,9 @@
   background-color: green;
   border-radius: 10px;
 }
+.valid_form{
+  border: 2px solid green;
+}
+.invalid_form{
+  border: 2px solid red;
+}
