@@ -31,8 +31,7 @@ export class ComentFilterPipe implements PipeTransform {
             }
           }
         }
-      }
+        return comments.filter(comments =>
+             comments.body.toLocaleLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1);
     }
-      return findComents
-    }
-  }
+}
