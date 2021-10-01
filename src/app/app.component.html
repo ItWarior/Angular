@@ -1,15 +1,16 @@
-  <div id="myForm">
-  <input type="text" placeholder="Search for Regex" [(ngModel)]="searchTerm" />
-<br>
-  <input  type="text" placeholder="Search for filter" [(ngModel)]="searchTermOne" />
+<div id="myForm">
+  <input type="text" placeholder="Search for Regex" [(ngModel)]="searchTerm"/>
+  <br>
+  <input type="text" placeholder="Search for filter" [(ngModel)]="searchTermOne"/>
 </div>
 
 <app-form
-(onButtonClicked)="showAllComents($event)"
-[allComents] = "comments"
+  (onButtonClicked)="showAllComents($event)"
+  [allComents]="comments"
 ></app-form>
-<div [ngClass] = {coments_block:true}>
-  <div *ngFor="let coment of comments | comentFilter:searchTerm | comentFilterOne:searchTermOne" [ngClass] = {coment_block:true}>
+<div [ngClass]={coments_block:true}>
+  <div *ngFor="let coment of comments | comentFilter:searchTerm | comentFilterOne:searchTermOne"
+       [ngClass]={coment_block:true}>
     <p>User Id: {{coment.userId}}</p>
     <p>Post Id : {{coment.id}}</p>
     <p>Title : {{coment.title}}</p>
