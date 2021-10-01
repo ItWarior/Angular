@@ -5,9 +5,8 @@ import {CommentModel} from "./CommentModel";
   name: 'comentFilter'
 })
 export class ComentFilterPipe implements PipeTransform {
-  transform(comments: any, searchTerm: string): CommentModel[] {
-    let findComents: any[];
-    findComents = [];
+  transform(comments: any, searchTerm: string):CommentModel[]{
+    let findComents = [];
 
     if (!searchTerm) {
       return comments;
@@ -17,21 +16,22 @@ export class ComentFilterPipe implements PipeTransform {
       const regexp = new RegExp(searchTerm, 'i');
 
       for (let key in coment) {
-        if(coment.hasOwnProperty(key)){
+        if (coment.hasOwnProperty(key)) {
 
-          if(typeof (coment[key]) === 'string'){
+          if (typeof (coment[key]) === 'string') {
             let res = coment[key].match(regexp);
-            if (res){
+            if (res) {
               findComents.push(coment);
             }
-          }else if(typeof (coment[key]) === 'number'){
+          } else if (typeof (coment[key]) === 'number') {
             let res = +searchTerm === coment[key];
-            if (res){
+            if (res) {
               findComents.push(coment);
             }
           }
         }
-        return comments.filter(comments =>
-             comments.body.toLocaleLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1);
+      }
     }
+  return findComents
+  }
 }
