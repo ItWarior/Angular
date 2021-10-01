@@ -5,7 +5,7 @@ import { CommentModel } from "./CommentModel";
 })
 export class ComentFilterPipe implements PipeTransform {
     transform (comments:  CommentModel[], searchTerm: string): CommentModel[] {
-        if(!comments || !searchTerm){
+        if(!searchTerm){
             return comments;
         }
         return comments.filter(comments =>
