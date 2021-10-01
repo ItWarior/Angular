@@ -1,8 +1,7 @@
   <div id="myForm">
-  <input type="text" placeholder="Search for body" [(ngModel)]="searchTerm" />
+  <input type="text" placeholder="Search for Regex" [(ngModel)]="searchTerm" />
 <br>
-  <input  type="text" placeholder="Search for title" [(ngModel)]="searchTermOne" />
-  <input type="button"   value="Reset form">
+  <input  type="text" placeholder="Search for filter" [(ngModel)]="searchTermOne" />
 </div>
 
 <app-form
@@ -12,9 +11,9 @@
 <div [ngClass] = {coments_block:true}>
   <div *ngFor="let coment of comments | comentFilter:searchTerm | comentFilterOne:searchTermOne" [ngClass] = {coment_block:true}>
     <p>User Id: {{coment.userId}}</p>
-    <p>Post Id :{{coment.id}}</p>
-    <p>Title :{{coment.title}}</p>
-    <p>Body :{{coment.body}}</p>
+    <p>Post Id : {{coment.id}}</p>
+    <p>Title : {{coment.title}}</p>
+    <p>Body : {{coment.body}}</p>
     <hr>
   </div>
 </div>

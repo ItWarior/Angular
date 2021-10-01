@@ -1,14 +1,38 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { CommentModel } from "./CommentModel";
-@Pipe ({
-    name: 'comentFilter'
+import {Pipe, PipeTransform} from "@angular/core";
+import {CommentModel} from "./CommentModel";
+
+@Pipe({
+  name: 'comentFilter'
 })
 export class ComentFilterPipe implements PipeTransform {
-    transform (comments:  CommentModel[], searchTerm: string): CommentModel[] {
-        if(!comments || !searchTerm){
-            return comments;
-        }
-        return comments.filter(comments =>
-             comments.body.toLocaleLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1);
+  transform(comments: any, searchTerm: string): CommentModel[] {
+    let findComents: any[];
+    findComents = [];
+
+    if (!searchTerm) {
+      return comments;
     }
-}
+
+    for (const coment of comments) {
+      const regexp = new RegExp(searchTerm, 'i');
+
+      for (let key in coment) {
+        if(coment.hasOwnProperty(key)){
+
+          if(typeof (coment[key]) === 'string'){
+            let res = coment[key].match(regexp);
+            if (res){
+              findComents.push(coment);
+            }
+          }else if(typeof (coment[key]) === 'number'){
+            let res = +searchTerm === coment[key];
+            if (res){
+              findComents.push(coment);
+            }
+          }
+        }
+      }
+    }
+      return findComents
+    }
+  }
