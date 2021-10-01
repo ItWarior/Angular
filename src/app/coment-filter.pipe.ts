@@ -8,7 +8,6 @@ export class ComentFilterPipe implements PipeTransform {
         if(!comments || !searchTerm){
             return comments;
         }
-
         return comments.filter(comments =>
              comments.body.toLocaleLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1);
     }

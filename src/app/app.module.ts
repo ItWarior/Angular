@@ -11,12 +11,15 @@ import {CommentsService} from "./services/comments.service";
 
 
 import {ComentFilterPipe} from './coment-filter.pipe'
+import { ComentFilterPipeOne } from './coment-filter-one.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    ComentFilterPipe
+    ComentFilterPipe,
+    ComentFilterPipeOne
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,8 @@ export class AppComponent {
   title = 'angular';
   comments: CommentModel[] = [];
   searchTerm: string;
-  constructor(private commentService: CommentsService) {
+  searchTermOne: string;
+    constructor(private commentService: CommentsService) {
     this.commentService.getComments().subscribe((res)=>{
       this.comments = [...JSON.parse(<string>localStorage.getItem('coments')) || [], ...res];
     })
