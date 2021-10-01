@@ -8,7 +8,11 @@ export class ComentFilterPipeOne implements PipeTransform {
         if(!searchTermOne){
             return comments;
         }
-        return comments.filter(comments =>
-             comments.title.toLocaleLowerCase().indexOf(searchTermOne.toLocaleLowerCase()) !== -1);
+
+        return comments.filter((comment) =>{
+          return comment.title.toLocaleLowerCase().indexOf(searchTermOne.toLocaleLowerCase()) !== -1 ||
+            comment.body.toLocaleLowerCase().indexOf(searchTermOne.toLocaleLowerCase()) !== -1
+        })
+
     }
 }

@@ -12,6 +12,7 @@ export class AppComponent {
   comments: CommentModel[] = [];
   searchTerm: string;
   searchTermOne: string;
+
     constructor(private commentService: CommentsService) {
     this.commentService.getComments().subscribe((res)=>{
       this.comments = [...JSON.parse(<string>localStorage.getItem('coments')) || [], ...res];
