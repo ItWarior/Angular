@@ -5,10 +5,9 @@ import { CommentModel } from "./CommentModel";
 })
 export class ComentFilterPipeOne implements PipeTransform {
     transform (comments:  CommentModel[], searchTermOne: string): CommentModel[] {
-        if(!comments || !searchTermOne){
+        if(!searchTermOne){
             return comments;
         }
-
         return comments.filter(comments =>
              comments.title.toLocaleLowerCase().indexOf(searchTermOne.toLocaleLowerCase()) !== -1);
     }
